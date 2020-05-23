@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.springboot.exception.example.constant.CommonConstant;
 import lombok.Data;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -13,9 +14,9 @@ public class Student {
     @NotNull(message = "Please provide a student Id")
     Long Id;
     @NotEmpty(message = "Please provide Student First Name")
-    String FirstName;
+    String firstName;
     @NotEmpty(message = "Please provide Student Last Name")
-    String LastName;
+    String lastName;
     @NotNull(message = "Please provide Student Height")
     Double height;
     @NotNull(message = "Please provide Student Weight")
@@ -25,5 +26,7 @@ public class Student {
     Date dateOfBirth;
     @NotEmpty(message = "Please provide a student department")
     String department;
+    @Email(message = "Please provide a valid email")
+    String email;
 
 }
